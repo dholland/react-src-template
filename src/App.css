@@ -15,6 +15,10 @@
 	flex-direction: column;
 }
 
+.outline {
+	border: 1px solid black;
+}
+
 header {
 	text-align: center;
 	padding-bottom: 10px;
@@ -32,6 +36,11 @@ footer {
 	height: 3rem;
 	background-color: cadetblue;
 	min-width: 100%;
+}
+
+.square {
+	width: 100px;
+	height: 100px;
 }
 
 .content {

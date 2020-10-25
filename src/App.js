@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
 import Header from './components/Header';
 
-function App() {
-	return (
-		<div className='container '>
-			<div className='content'>
-				<Header
-					title="Danny's App"
-					appDescription='Make something really cool'
-				/>
-				<h2>Let's Get Coding</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam facilis
-					autem doloremque! Voluptate eligendi commodi eum totam cupiditate
-					placeat, vitae fuga, excepturi rem maxime expedita nihil optio
-					temporibus cum quam.
-				</p>
-			</div>
-			<footer>Date: </footer>
-		</div>
-	);
-}
+export default class App extends Component {
+	state = {
+		color: 'white',
+	};
 
-export default App;
+	toggleColor = () => {
+		let color = this.state.color;
+		this.setState(color === 'white' ? { color: 'black' } : { color: 'white' });
+	};
+
+	render() {
+		return (
+			<div className='container virtical--center'>
+				<div className='buttons'>
+					<button onClick={this.toggleColor}>Button 1</button>
+					<button>Button 2</button>
+				</div>
+				<div className='pad'>
+					<div
+						className='square'
+						style={{ backgroundColor: `${this.state.color}` }}></div>
+				</div>
+			</div>
+		);
+	}
+}
